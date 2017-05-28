@@ -1,0 +1,12 @@
+Floating-Point Literals
+
+Hexadecimal floating-point literals consist of a 0x prefix, followed by an optional hexadecimal fraction, 
+followed by a hexadecimal exponent. The hexadecimal fraction consists of a decimal point followed by a sequence of hexadecimal
+digits. The exponent consists of an upper- or lowercase p prefix followed by a sequence of decimal digits that indicates what 
+power of 2 the value preceding the p is multiplied by. For example, 0xFp2 represents 15 × 22, which evaluates to 60. 
+Similarly, 0xFp-2 represents 15 × 2-2, which evaluates to 3.75.
+
+Examples:
+ -> 0xC.3p0 = (12 + 3/16) * 2^0 = 12.1875
+
+ -> 0xAB.CDp4 = (10*16 + 11 + 13/16 + 14/16^2) * 2^4 = 2748.8125
