@@ -1,0 +1,43 @@
+//set & get 
+
+var variable name: type {
+    get {
+        statements
+    }
+    set(setter name) {
+        statements
+    }
+}
+
+The getter is used to read the value, and the setter is used to write the value. 
+The setter clause is optional, and when only a getter is needed, you can omit both 
+clauses and simply return the requested value directly, as described in Read-Only 
+Computed Properties. But if you provide a setter clause, you must also provide a getter clause.
+
+//willSet & didSet
+
+var variable name: type = expression {
+    willSet(setter name) {
+        statements
+    }
+    didSet(setter name) {
+        statements
+    }
+}
+
+The willSet and didSet observers provide a way to observe (and to respond appropriately)
+when the value of a variable or property is being set. The observers are not called when 
+the variable or property is first initialized. Instead, they are called only when the value
+is set outside of an initialization context.
+
+A willSet observer is called just before the value of the variable or property is set. The new value
+is passed to the willSet observer as a constant, and therefore it can’t be changed in the implementation 
+of the willSet clause. The didSet observer is called immediately after the new value is set. In contrast 
+to the willSet observer, the old value of the variable or property is passed to the didSet observer in
+case you still need access to it. That said, if you assign a value to a variable or property within its 
+own didSet observer clause, that new value that you assign will replace the one that was just set and 
+passed to the willSet observer.
+
+Reference: 
+https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Declarations.html#//apple_ref/doc/uid/TP40014097-CH34-ID351
+
