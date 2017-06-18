@@ -1,0 +1,18 @@
+    LITERAL      TYPE       VALUE
+    #file        String     The name of the file where the expression appears. 
+    #line        Int        The line number the expression appears on 
+    #column      Int        The column number the expression begins in. 
+    #function    String     The name of the declaration the expression appears in. 
+    
+    
+    Function & Cavemun Debugging Implementation: 
+    
+    @IBAction func buttonTapped(_ sender: UIButton){
+        print("Method: \(#function) in file: \(#file) line: \(#line) called.")
+    }
+    
+    
+    Result: (Console message) 
+    
+    Method: buttonTapped in file: /Users/chrisjim/Desktop/iOS Apps (BigNerdRanch)/Buggy/Buggy/ViewController.swift line: 14 called.
+    
